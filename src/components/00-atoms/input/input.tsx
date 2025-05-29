@@ -9,11 +9,12 @@ export function Input({ label, value, isDisabled = false, onChange }: Props) {
   return (
     <>
       {isDisabled ? (
-        <div className="flex flex-col gap-2 relative bg-(--bgdisabled) rounded-lg p-2">
+        <div className=" flex flex-col gap-2 relative bg-(--bgdisabled) rounded-lg p-2">
           <label className="text-(--disabledlabel) 24 absolute text-[12px] top-1 left-2">
             {label}
           </label>
           <input
+            id="column"
             disabled={isDisabled}
             value={value ?? "-"}
             className="pt-3 text-(--disabledtext) outline-none  bg-(--bgdisabled) placeholder:text-gray-400"
