@@ -1,14 +1,18 @@
-import React from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export const Resizable = ({ children }: any) => {
-  const [node, setNode] = React.useState<HTMLElement | null>(null);
+  const [node, setNode] = useState<HTMLElement | null>(null);
+  const [dxDy, setDxDy] = useState<{ dx: number; dy: number }>({
+    dx: 0,
+    dy: 0,
+  });
 
-  const ref = React.useCallback((nodeEle: any) => {
+  const ref = useCallback((nodeEle: any) => {
     setNode(nodeEle);
   }, []);
 
-  const handleMouseDown = React.useCallback(
-    (e: React.MouseEvent) => {
+  const handleMouseDown = useCallback(
+    (e: MouseEvent) => {
       if (!node) {
         return;
       }
@@ -20,11 +24,13 @@ export const Resizable = ({ children }: any) => {
       };
       const styles = window.getComputedStyle(parent);
       const w = parseInt(styles.width, 10);
-      const h = parseInt(styles.height, 10);
+      // const h = parseInt(styles.height, 10);
 
-      const handleMouseMove = (e: React.MouseEvent) => {
+      const handleMouseMove = (e: MouseEvent) => {
         const dx = e.clientX - startPos.x;
         const dy = e.clientY - startPos.y;
+
+        setDxDy({ dx, dy });
         parent.style.width = `${w + dx}px`;
         updateCursor();
       };
@@ -41,8 +47,8 @@ export const Resizable = ({ children }: any) => {
     [node]
   );
 
-  const handleTouchStart = React.useCallback(
-    (e: React.TouchEvent) => {
+  const handleTouchStart = useCallback(
+    (e: TouchEvent) => {
       if (!node) {
         return;
       }
@@ -55,13 +61,13 @@ export const Resizable = ({ children }: any) => {
         y: touch.clientY,
       };
       const styles = window.getComputedStyle(parent);
-      const w = parseInt(styles.width, 10);
-      const h = parseInt(styles.height, 10);
+      const w = parseInt(styles.width, 10) - dxDy.dx;
+      // const h = parseInt(styles.height, 10) - dxDy.dy;
 
-      const handleTouchMove = (e: React.TouchEvent) => {
+      const handleTouchMove = (e: TouchEvent) => {
         const touch = e.touches[0];
         const dx = touch.clientX - startPos.x;
-        const dy = touch.clientY - startPos.y;
+        // const dy = touch.clientY - startPos.y;
         parent.style.width = `${w + dx}px`;
         updateCursor();
       };
@@ -88,7 +94,7 @@ export const Resizable = ({ children }: any) => {
     document.body.style.removeProperty("user-select");
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!node) {
       return;
     }
@@ -100,7 +106,6 @@ export const Resizable = ({ children }: any) => {
       node.removeEventListener("touchstart", handleTouchStart as any);
     };
   }, [node]);
-  console.log(node);
 
   return children({ ref });
 };

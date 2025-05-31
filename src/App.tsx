@@ -4,10 +4,10 @@ import { Resizable } from "./components/00-atoms/resizable/resizable";
 
 function App() {
   return (
-    <>
+    <div className="w-full h-full flex flex-col ">
       <table>
         <thead>
-          <tr>
+          <tr className="">
             {["No.", "First name", "Last name"].map((title) => (
               <Resizable key={title}>
                 {({ ref }: { ref: React.Ref<HTMLDivElement> }) => (
@@ -85,7 +85,7 @@ function App() {
         value="value"
         onChange={() => console.log("changed")}
       />
-    </>
+    </div>
   );
 }
 
