@@ -1,19 +1,42 @@
-.column {
-  position: relative;
-  border: solid thin blue;
+.app-shell {
+  min-height: 100vh;
+  padding: 3rem 1.25rem 4rem;
 }
 
-.resizer {
-  background: transparent;
-  cursor: col-resize;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  height: 100%;
-  width: 0.25rem;
+.app-hero {
+  margin: 0 auto 2rem;
+  display: grid;
+  max-width: 90rem;
+  gap: 1rem;
 }
-.resizer:hover {
-  background: rgb(99 102 241);
+
+.app-hero h1 {
+  max-width: 48rem;
+  font-size: clamp(2.4rem, 4vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: #0f172a;
+}
+
+.app-eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.app-intro {
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+@media (min-width: 960px) {
+  .app-hero {
+    align-items: end;
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  }
 }
