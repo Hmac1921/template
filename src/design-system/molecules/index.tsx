@@ -1,4 +1,5 @@
 export { Card } from "./Card";
+export { InlineDialog, ParentDialog, ScreenDialog } from "./Dialog";
 export {
   DataTable,
   DefaultDataTableFilters,
@@ -13,6 +14,11 @@ export type {
   DataTableProps,
 } from "./data-table";
 export type { CardProps } from "./Card";
+export type {
+  InlineDialogProps,
+  ParentDialogProps,
+  ScreenDialogProps,
+} from "./Dialog";
 export type { EmptyStateProps } from "./EmptyState";
 export type { FieldProps } from "./Field";
 export type { StatCardProps } from "./StatCard";
