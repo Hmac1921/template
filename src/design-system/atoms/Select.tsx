@@ -10,7 +10,7 @@ export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'> 
 };
 
 const baseClasses =
-  'w-full rounded-[--radius-lg] border bg-[--surface] px-3 text-sm text-[--ink] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--surface] disabled:cursor-not-allowed disabled:opacity-60';
+  'w-full rounded-lg border bg-surface px-3 text-sm text-ink transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] disabled:cursor-not-allowed disabled:opacity-60';
 
 const sizeClasses: Record<SelectSize, string> = {
   sm: 'h-9',
@@ -28,7 +28,7 @@ export const Select = ({
     className={cx(
       baseClasses,
       sizeClasses[uiSize],
-      hasError && 'border-[--danger] focus-visible:ring-[rgba(194,65,12,0.35)]',
+      hasError && 'border-danger focus-visible:ring-[rgba(194,65,12,0.35)]',
       className
     )}
     {...props}

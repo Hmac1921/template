@@ -22,15 +22,15 @@ export const EmptyState = ({
 }: EmptyStateProps) => (
   <div
     className={cx(
-      'surface-muted-gradient flex flex-col items-start gap-3 rounded-[--radius-lg] border border-dashed border-[--border] bg-[--surface-muted] p-6',
+      'surface-muted-gradient flex flex-col items-start gap-3 rounded-lg border border-dashed border-border bg-surface-muted p-6',
       className
     )}
   >
-    {icon ? <div className="text-2xl text-[--accent]">{icon}</div> : null}
+    {icon ? <div className="text-2xl text-accent">{icon}</div> : null}
     <div>
-      <h4 className="font-display text-lg font-semibold text-[--ink]">{title}</h4>
+      <h4 className="font-display text-lg font-semibold text-ink">{title}</h4>
       {description ? (
-        <p className="mt-1 text-sm text-[--ink-muted]">{description}</p>
+        <p className="mt-1 text-sm text-ink-muted">{description}</p>
       ) : null}
     </div>
     {actionLabel ? (

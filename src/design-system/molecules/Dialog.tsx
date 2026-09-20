@@ -118,7 +118,7 @@ function DialogPanel({
       aria-labelledby={labelledBy}
       aria-modal={modal ? "true" : undefined}
       className={cx(
-        "relative z-10 flex max-h-[calc(100vh-2rem)] w-[min(calc(100vw-2rem),100%)] flex-col overflow-hidden rounded-[--radius-lg] border border-[--border] text-[--ink] shadow-[0_24px_80px_-34px_rgba(15,23,42,0.75)] outline-none",
+        "relative z-10 flex max-h-[calc(100vh-2rem)] w-[min(calc(100vw-2rem),100%)] flex-col overflow-hidden rounded-lg border border-border text-ink shadow-[0_24px_80px_-34px_rgba(15,23,42,0.75)] outline-none",
         panelSurfaceClasses,
         sizeClasses[size],
         className,
@@ -129,21 +129,21 @@ function DialogPanel({
     >
       <div
         className={cx(
-          "surface-gradient shrink-0 border-b border-[--border] px-5 py-4 sm:px-6",
+          "surface-gradient shrink-0 border-b border-border px-5 py-4 sm:px-6",
           panelSurfaceClasses,
         )}
       >
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
             <h2
-              className="font-display text-xl font-semibold text-[--ink]"
+              className="font-display text-xl font-semibold text-ink"
               id={labelledBy}
             >
               {title}
             </h2>
             {description ? (
               <p
-                className="mt-1 max-w-prose text-sm leading-6 text-[--ink-muted]"
+                className="mt-1 max-w-prose text-sm leading-6 text-ink-muted"
                 id={describedBy}
               >
                 {description}
@@ -168,7 +168,7 @@ function DialogPanel({
       {footer ? (
         <div
           className={cx(
-            "flex shrink-0 flex-col-reverse gap-3 border-t border-[--border] px-5 py-4 sm:flex-row sm:justify-end sm:px-6",
+            "flex shrink-0 flex-col-reverse gap-3 border-t border-border px-5 py-4 sm:flex-row sm:justify-end sm:px-6",
             panelSurfaceClasses,
           )}
         >
@@ -226,7 +226,7 @@ export function ParentDialog({
   const panelRef = useDialogDismiss(open, onOpenChange);
 
   return (
-    <div className={cx("relative overflow-hidden rounded-[--radius-lg]", wrapperClassName)}>
+    <div className={cx("relative overflow-hidden rounded-lg", wrapperClassName)}>
       {parent}
 
       {open ? (
@@ -239,7 +239,7 @@ export function ParentDialog({
           />
           <DialogPanel
             {...props}
-            className="h-full max-h-full w-full max-w-none rounded-[--radius-lg]"
+            className="h-full max-h-full w-full max-w-none rounded-lg"
             describedBy={props.description ? descriptionId : undefined}
             labelledBy={titleId}
             onOpenChange={onOpenChange}

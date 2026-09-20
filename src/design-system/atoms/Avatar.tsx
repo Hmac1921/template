@@ -29,7 +29,7 @@ export const Avatar = ({ name, size = 'md', className, ...props }: AvatarProps) 
       <img
         alt={name}
         className={cx(
-          'rounded-full object-cover ring-2 ring-[--surface] shadow-sm',
+          'rounded-full object-cover ring-2 ring-[var(--surface)] shadow-sm',
           sizeClasses[size],
           className
         )}
@@ -41,7 +41,7 @@ export const Avatar = ({ name, size = 'md', className, ...props }: AvatarProps) 
   return (
     <div
       className={cx(
-        'flex items-center justify-center rounded-full bg-[--surface-muted] font-semibold text-[--ink]',
+        'flex items-center justify-center rounded-full bg-surface-muted font-semibold text-ink',
         sizeClasses[size],
         className
       )}

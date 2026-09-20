@@ -13,14 +13,14 @@ export const Switch = ({
   className,
   ...props
 }: SwitchProps) => (
-  <label className="inline-flex items-center gap-3 text-sm text-[--ink]">
+  <label className="inline-flex items-center gap-3 text-sm text-ink">
     <button
       type="button"
       role="switch"
       aria-checked={checked}
       className={cx(
-        'relative h-6 w-11 rounded-full border border-[--border] transition',
-        checked ? 'bg-[--brand]' : 'bg-[--surface-muted]',
+        'relative h-6 w-11 rounded-full border border-border transition',
+        checked ? 'bg-brand' : 'bg-surface-muted',
         className
       )}
       {...props}

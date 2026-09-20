@@ -1,4 +1,5 @@
 export * from "./atoms";
+export * from "./comfort-settings";
 export * from "./molecules";
 export * from "./organisms";
 export { ThemeProvider, useTheme } from "./theme-provider";

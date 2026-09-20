@@ -15,15 +15,15 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-[--radius-lg] font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--surface] disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] disabled:cursor-not-allowed disabled:opacity-60";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-[--brand] text-[--on-brand] shadow-[--shadow-button] hover:bg-[--brand-strong]",
+    "bg-brand text-on-brand shadow-[var(--shadow-button)] hover:bg-brand-strong",
   secondary:
-    "border border-[--border] bg-[--surface] text-[--ink] hover:bg-[--surface-muted]",
-  ghost: "text-[--ink] hover:bg-[--surface-muted]",
-  danger: "bg-[--danger] text-white hover:brightness-95",
+    "border border-border bg-surface text-ink hover:bg-surface-muted",
+  ghost: "text-ink hover:bg-surface-muted",
+  danger: "bg-danger text-white hover:brightness-95",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

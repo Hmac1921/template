@@ -29,7 +29,7 @@ export const RadioGroup = ({
   return (
     <fieldset className={cx('flex flex-col gap-2', className)}>
       {label ? (
-        <legend className="text-xs font-semibold uppercase tracking-[0.18em] text-[--ink-muted]">
+        <legend className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
           {label}
         </legend>
       ) : null}
@@ -43,8 +43,8 @@ export const RadioGroup = ({
               className={cx(
                 'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition',
                 value === option.value
-                  ? 'border-[--brand] bg-[--brand-soft] text-[--brand-strong]'
-                  : 'border-[--border] bg-[--surface]'
+                  ? 'border-brand bg-brand-soft text-brand-strong'
+                  : 'border-border bg-surface'
               )}
             >
               <input

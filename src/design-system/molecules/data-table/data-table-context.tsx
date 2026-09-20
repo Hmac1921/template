@@ -42,8 +42,8 @@ export const Table = ({ children }: TableProps) => {
   return (
     <DataTableContext.Provider value={{ state, dispatch }}>
       <div
-        className="surface-gradient m-4 flex flex-col overflow-x-hidden rounded-[--radius-lg] border border-border/30
-       bg-[--surface] p-4 text-[--ink] shadow-[--shadow-card]"
+        className="surface-gradient m-4 flex flex-col overflow-x-hidden rounded-lg border border-border/30
+       bg-surface p-4 text-ink shadow-[var(--shadow-card)]"
       >
         {children}
       </div>
@@ -110,7 +110,7 @@ type HeaderProps = {
 const Header = ({ children }: HeaderProps) => {
   return (
     <thead className="contents">
-      <tr className="contents text-xs font-semibold uppercase tracking-[0.2em] text-[--ink-muted]">
+      <tr className="contents text-xs font-semibold uppercase tracking-[0.2em] text-ink-muted">
         {children}
       </tr>
     </thead>
@@ -181,11 +181,11 @@ const ColumnHeader = ({ children, column }: ColumnHeaderProps) => {
       }
     >
       {({ ref }: { ref: Ref<HTMLDivElement> }) => (
-        <th className="surface-muted-gradient relative border-b border-[--border] bg-[--surface-muted] px-3 py-2 text-left text-xs font-semibold uppercase tracking-[0.18em] text-[--ink-muted]">
+        <th className="surface-muted-gradient relative border-b border-border bg-surface-muted px-3 py-2 text-left text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
           {children}
 
           <div
-            className="absolute right-0 top-0 h-full w-1.5 bg-transparent hover:bg-[--brand-soft]"
+            className="absolute right-0 top-0 h-full w-1.5 bg-transparent hover:bg-brand-soft"
             ref={ref}
           ></div>
         </th>
@@ -226,7 +226,7 @@ type CellProps = {
 
 const Cell = ({ children }: CellProps) => {
   return (
-    <td className="border-t border-[--border] px-3 py-2 text-sm text-[--ink] transition group-hover:bg-[--surface-muted]">
+    <td className="border-t border-border px-3 py-2 text-sm text-ink transition group-hover:bg-surface-muted">
       <span className="block overflow-hidden overflow-ellipsis whitespace-nowrap">
         {" "}
         {children}

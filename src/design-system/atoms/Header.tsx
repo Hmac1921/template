@@ -22,8 +22,8 @@ const sizeClasses: Record<HeaderSize, string> = {
 };
 
 const colorClasses: Record<HeaderColor, string> = {
-  primary: "text-[--ink]",
-  secondary: "text-[--ink-muted]",
+  primary: "text-ink",
+  secondary: "text-ink-muted",
 };
 
 export const Header = ({

@@ -77,13 +77,13 @@ export const FilterText = ({
   return (
     <div className={`flex flex-col gap-1 ${className ?? ""}`}>
       {label ? (
-        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[--ink-muted]">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
           {label}
         </span>
       ) : null}
       <input
         type="text"
-        className="h-9 rounded-[--radius-lg] border border-[--border] bg-[--surface] px-3 text-sm text-[--ink] placeholder:text-[--ink-muted] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring]"
+        className="h-9 rounded-lg border border-border bg-surface px-3 text-sm text-ink placeholder:text-ink-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
         value={activeValue ?? ""}
         placeholder={placeholder}
         disabled={disabled}
@@ -124,12 +124,12 @@ export const FilterSelect = ({
   return (
     <div className={`flex flex-col gap-1 ${className ?? ""}`}>
       {label ? (
-        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[--ink-muted]">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
           {label}
         </span>
       ) : null}
       <select
-        className="h-9 rounded-[--radius-lg] border border-[--border] bg-[--surface] px-3 text-sm text-[--ink] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring]"
+        className="h-9 rounded-lg border border-border bg-surface px-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
         value={activeValue ?? ""}
         disabled={disabled}
         onChange={handleChange}
@@ -162,13 +162,13 @@ export const FilterDate = ({
   return (
     <div className={`flex flex-col gap-1 ${className ?? ""}`}>
       {label ? (
-        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[--ink-muted]">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
           {label}
         </span>
       ) : null}
       <input
         type="date"
-        className="h-9 rounded-[--radius-lg] border border-[--border] bg-[--surface] px-3 text-sm text-[--ink] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring]"
+        className="h-9 rounded-lg border border-border bg-surface px-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
         value={activeValue ?? ""}
         disabled={disabled}
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -211,26 +211,26 @@ export const FilterDateRange = ({
   return (
     <div className={`flex flex-col gap-1 ${className ?? ""}`}>
       {label ? (
-        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[--ink-muted]">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
           {label}
         </span>
       ) : null}
       <div className="flex items-center gap-2">
-        <label className="flex items-center gap-2 text-xs font-medium text-[--ink-muted]">
+        <label className="flex items-center gap-2 text-xs font-medium text-ink-muted">
           {startLabel}
           <input
             type="date"
-            className="h-9 rounded-[--radius-lg] border border-[--border] bg-[--surface] px-3 text-sm text-[--ink] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring]"
+            className="h-9 rounded-lg border border-border bg-surface px-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
             value={currentValue.start ?? ""}
             disabled={disabled}
             onChange={handleStartChange}
           />
         </label>
-        <label className="flex items-center gap-2 text-xs font-medium text-[--ink-muted]">
+        <label className="flex items-center gap-2 text-xs font-medium text-ink-muted">
           {endLabel}
           <input
             type="date"
-            className="h-9 rounded-[--radius-lg] border border-[--border] bg-[--surface] px-3 text-sm text-[--ink] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring]"
+            className="h-9 rounded-lg border border-border bg-surface px-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)]"
             value={currentValue.end ?? ""}
             disabled={disabled}
             onChange={handleEndChange}
@@ -263,7 +263,7 @@ export const FilterRadioGroup = ({
       disabled={disabled}
     >
       {label ? (
-        <legend className="text-xs font-semibold uppercase tracking-[0.18em] text-[--ink-muted]">
+        <legend className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
           {label}
         </legend>
       ) : null}
@@ -274,7 +274,7 @@ export const FilterRadioGroup = ({
             <label
               key={String(option.value)}
               htmlFor={id}
-              className="flex items-center gap-2 rounded-full border border-[--border] bg-[--surface] px-3 py-1.5 text-sm text-[--ink] transition hover:bg-[--surface-muted]"
+              className="flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-ink transition hover:bg-surface-muted"
             >
               <input
                 id={id}
@@ -306,7 +306,7 @@ export const FilterClear = ({
     <button
       type="button"
       className={cx(
-        "h-9 rounded-[--radius-lg] border border-[--border] bg-[--surface] px-3 text-xs font-semibold uppercase tracking-[0.18em] text-[--ink] transition hover:bg-[--surface-muted]",
+        "h-9 rounded-lg border border-border bg-surface px-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition hover:bg-surface-muted",
         className,
       )}
       onClick={() => dispatch({ type: ACTION_TYPES.RESET_FILTERS })}

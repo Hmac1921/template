@@ -9,11 +9,11 @@ export type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
 };
 
 const variantClasses: Record<BadgeVariant, string> = {
-  neutral: 'bg-[--surface-muted] text-[--ink]',
-  success: 'bg-[rgba(21,128,61,0.15)] text-[--success]',
-  warning: 'bg-[rgba(180,83,9,0.15)] text-[--warning]',
-  danger: 'bg-[rgba(194,65,12,0.15)] text-[--danger]',
-  accent: 'bg-[rgba(204,122,45,0.15)] text-[--accent]',
+  neutral: 'bg-surface-muted text-ink',
+  success: 'bg-[rgba(21,128,61,0.15)] text-success',
+  warning: 'bg-[rgba(180,83,9,0.15)] text-warning',
+  danger: 'bg-[rgba(194,65,12,0.15)] text-danger',
+  accent: 'bg-[rgba(204,122,45,0.15)] text-accent',
 };
 
 export const Badge = ({

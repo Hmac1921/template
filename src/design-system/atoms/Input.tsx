@@ -17,7 +17,7 @@ export type InputProps = Omit<
 };
 
 const baseClasses =
-  "w-full rounded-[--radius-lg] border bg-[--surface] px-3 text-sm text-[--ink] placeholder:text-[--ink-muted] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--focus-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--surface] disabled:cursor-not-allowed disabled:opacity-60";
+  "w-full rounded-lg border bg-surface px-3 text-sm text-ink placeholder:text-ink-muted transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)] disabled:cursor-not-allowed disabled:opacity-60";
 
 const sizeClasses: Record<InputSize, string> = {
   sm: "h-9",
@@ -49,7 +49,7 @@ export const Input = ({
         <label
           className={cx(
             "block text-xs font-medium uppercase tracking-[0.18em]",
-            isDisabled ? "text-[--ink-muted]" : "text-[--brand]",
+            isDisabled ? "text-ink-muted" : "text-brand",
           )}
           htmlFor={inputId}
         >
@@ -65,7 +65,7 @@ export const Input = ({
           baseClasses,
           sizeClasses[uiSize],
           isInvalid &&
-            "border-[--danger] focus-visible:ring-[rgba(194,65,12,0.35)]",
+            "border-danger focus-visible:ring-[rgba(194,65,12,0.35)]",
           isDisabled && "cursor-not-allowed opacity-60",
           className,
         )}
@@ -74,13 +74,13 @@ export const Input = ({
       />
 
       {hint ? (
-        <p className="text-xs text-[--ink-muted]" id={hintId}>
+        <p className="text-xs text-ink-muted" id={hintId}>
           {hint}
         </p>
       ) : null}
 
       {errorMessage ? (
-        <p className="text-xs font-medium text-[--danger]" id={errorId}>
+        <p className="text-xs font-medium text-danger" id={errorId}>
           {errorMessage}
         </p>
       ) : null}

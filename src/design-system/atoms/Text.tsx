@@ -22,8 +22,8 @@ const sizeClasses: Record<TextSize, string> = {
 };
 
 const colorClasses: Record<TextColor, string> = {
-  primary: "text-[--ink]",
-  secondary: "text-[--ink-muted]",
+  primary: "text-ink",
+  secondary: "text-ink-muted",
 };
 
 export const Text = ({

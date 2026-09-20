@@ -170,14 +170,14 @@ export const DefaultDataTableFilters = <T extends Record<string, unknown>>({
       {Object.entries(filters).map(([key, value]) => (
         <div
           key={key}
-          className="rounded-full border border-[--border] bg-[--surface] px-3 py-1.5 text-xs font-medium text-[--ink]"
+          className="rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-medium text-ink"
         >
           {String(key)}: {String(value)}
         </div>
       ))}
       <button
         type="button"
-        className="h-9 rounded-[--radius-lg] border border-[--border] bg-[--surface] px-3 text-xs font-semibold uppercase tracking-[0.18em] text-[--ink] transition hover:bg-[--surface-muted]"
+        className="h-9 rounded-lg border border-border bg-surface px-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition hover:bg-surface-muted"
         onClick={() => onFiltersChange({})}
       >
         Clear

@@ -22,8 +22,8 @@ const GTPagination = ({ payload, count, onChange }: GTPaginationProps) => {
   };
 
   const cssClassNames = {
-    available: 'cursor-pointer text-[--ink] transition hover:text-[--brand-strong]',
-    disabled: 'cursor-not-allowed text-[--ink-muted] opacity-60',
+    available: 'cursor-pointer text-ink transition hover:text-brand-strong',
+    disabled: 'cursor-not-allowed text-ink-muted opacity-60',
   };
 
   const handleClick = (e: MouseEvent) => {
@@ -74,7 +74,7 @@ const GTPagination = ({ payload, count, onChange }: GTPaginationProps) => {
   };
 
   return (
-    <div className="flex items-center justify-end gap-2 text-sm text-[--ink]">
+    <div className="flex items-center justify-end gap-2 text-sm text-ink">
       <button
         type="button"
         aria-label="First page"
